@@ -1,0 +1,28 @@
+#include <iostream>
+
+using namespace std;
+
+struct struct1 {
+	char a;
+	char b;
+	char c;
+	int d;
+};
+
+struct struct2 {
+	char a;
+	short b;
+};
+
+
+int main()
+{
+	cout << sizeof(struct1) << endl;
+	cout << sizeof(struct2) << endl;
+	return 0;
+}
+
+
+
+
+

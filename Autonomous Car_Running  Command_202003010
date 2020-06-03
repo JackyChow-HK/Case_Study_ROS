@@ -1,0 +1,29 @@
+//Clear old ros ,  it will launch automatically in startup
+killall -9 roscore
+
+//start ros
+roscore  
+
+
+//Run single ultrasonic sensor
+rosrun rossensor sonar_single.py 
+
+//Run Obstacles avoid 
+rosrun rcccontrol RCC_control.py
+
+// enable permission of arduino  
+sudo usermod -a -G dialout $USER
+
+// change directory
+ cd Downloads/arduino-1.8.12
+
+//Open Arduino IDE
+sudo ./arduino
+
+//Run rosserial 
+rosrun rosserial_python serial_node.py /dev/ttyACM0 
+
+//Run teleop for testing
+rosrun teleop_twist_keyboard teleop_twist_keyboard.py
+
+
